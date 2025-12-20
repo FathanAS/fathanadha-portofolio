@@ -1,10 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
-import { Download, FileText, ChevronLeft, ExternalLink } from "lucide-react";
+import { Download, FileText, ChevronLeft, ExternalLink, MessageSquare } from "lucide-react";
 import Link from "next/link";
 
 export default function ResumePage() {
   const resumePath = "/cv-suratman.pdf";
+  // WhatsApp URL for requesting full CV
+  const whatsappUrl = "https://wa.me/6285143515392?text=Halo%20Fathan%2C%20saya%20tertarik%20untuk%20mendapatkan%20CV%20full%20detail%20Anda.";
 
   // Fungsi untuk memaksa download jika tombol diklik
   const handleDownload = () => {
@@ -16,10 +18,14 @@ export default function ResumePage() {
     document.body.removeChild(link);
   };
 
+  const handleRequestFullCV = () => {
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
     <section className="min-h-screen bg-[#0A0A0A] pt-24 pb-12 px-6">
       <div className="max-w-6xl mx-auto">
-        
+
         {/* Header Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-6">
           <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
@@ -32,17 +38,26 @@ export default function ResumePage() {
           </motion.div>
 
           <div className="flex gap-3 w-full md:w-auto">
-     <button 
-  onClick={handleDownload}
-  className="flex-1 md:flex-none bg-white text-black px-8 py-4 font-bold text-[10px] tracking-[0.2em] 
-             hover:bg-[#F5A623] hover:text-white transition-all duration-300 
+            <button
+              onClick={handleDownload}
+              className="flex-1 md:flex-none bg-white text-black px-8 py-4 font-bold text-[10px] tracking-[0.2em]
+             hover:bg-[#F5A623] hover:text-white transition-all duration-300
              flex items-center justify-center gap-2 border border-transparent shadow-xl"
->
-  <Download size={16} /> DOWNLOAD_PDF
-</button>
-            <a 
-              href={resumePath} 
-              target="_blank" 
+            >
+              <Download size={16} /> DOWNLOAD_PDF
+            </button>
+
+            <button
+              onClick={handleRequestFullCV}
+              className="flex-1 md:flex-none bg-transparent text-white px-8 py-4 font-bold text-[10px] tracking-[0.2em] 
+             hover:bg-[#F5A623] hover:text-white border border-white/20 hover:border-[#F5A623] transition-all duration-300 
+             flex items-center justify-center gap-2 shadow-lg"
+            >
+              <MessageSquare size={16} /> FULL_CV
+            </button>
+            <a
+              href={resumePath}
+              target="_blank"
               className="p-4 border border-white/10 text-white hover:border-accent hover:text-accent transition-all"
               title="Open in New Tab"
             >
@@ -52,19 +67,19 @@ export default function ResumePage() {
         </div>
 
         {/* Preview Section */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="relative w-full aspect-[1/1.4] md:h-[900px] border border-white/5 bg-[#111] overflow-hidden"
         >
           {/* Header Toolbar Minimalis */}
           <div className="absolute top-0 left-0 w-full h-10 bg-[#1A1A1A] border-b border-white/5 flex items-center px-4 justify-between z-20">
-             <div className="flex gap-1.5">
-                <div className="w-2 h-2 rounded-full bg-white/10"></div>
-                <div className="w-2 h-2 rounded-full bg-white/10"></div>
-                <div className="w-2 h-2 rounded-full bg-white/10"></div>
-             </div>
-             <p className="font-mono text-[9px] text-white/30 tracking-[0.3em]">PREVIEW_MODE_ACTIVE</p>
+            <div className="flex gap-1.5">
+              <div className="w-2 h-2 rounded-full bg-white/10"></div>
+              <div className="w-2 h-2 rounded-full bg-white/10"></div>
+              <div className="w-2 h-2 rounded-full bg-white/10"></div>
+            </div>
+            <p className="font-mono text-[9px] text-white/30 tracking-[0.3em]">PREVIEW_MODE_ACTIVE</p>
           </div>
 
           {/* PDF Container */}

@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 
 const educationData = [
   {
-    year: "2014 - 2020",
-    school: "SDN BJI IX",
-    degree: "Sekolah Negeri",
-    description: "mempelajari pelajaran-pelajaran yang umum",
+    year: "2023-Now",
+    school: "SMK Madinatul Quran",
+    degree: "Rekayasa Perangkat Lunak",
+    description: "Mempelajari dasar-dasar pemrograman, dan belajar membuat web",
   },
   {
     year: "2020-2023",
@@ -15,10 +15,10 @@ const educationData = [
     description: "Mempelajari ilmu-ilmu keislaman dan juga mempelajari hal-hal umum",
   },
   {
-    year: "2023-Now",
-    school: "SMK Madinatul Quran",
-    degree: "Rekayasa Perangkat Lunak",
-    description: "Mempelajari dasar-dasar pemrograman, dan belajar membuat web",
+    year: "2014 - 2020",
+    school: "SDN BJI IX",
+    degree: "Sekolah Negeri",
+    description: "mempelajari pelajaran-pelajaran yang umum",
   },
 ];
 
